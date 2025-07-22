@@ -15,15 +15,5 @@
       "use": "@vercel/static-build",
       "config": { "distDir": "dist" }
     }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "invoice-management-server/api/index.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "invoice-management-client/dist/$1"
-    }
   ]
 }
