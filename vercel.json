@@ -1,0 +1,29 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    }
+  ],
+  "builds": [
+    {
+      "src": "invoice-management-server/api/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "invoice-management-client/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "invoice-management-server/api/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "invoice-management-client/dist/$1"
+    }
+  ]
+}
