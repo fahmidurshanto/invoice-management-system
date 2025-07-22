@@ -3,6 +3,10 @@
     {
       "source": "/api/:path*",
       "destination": "/api/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/invoice-management-client/dist/$1"
     }
   ],
   "builds": [
